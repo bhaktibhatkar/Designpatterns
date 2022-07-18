@@ -36,6 +36,11 @@ class Checker
         return true;
     }
 
+Single funsction - Three parts will decide battery is ok or not
+
+temperature , soc, and chargerate we can write it down three different fuctions , 
+
+at last on basis of all three we will conclude the result 
 ```
 
 ``` Java
