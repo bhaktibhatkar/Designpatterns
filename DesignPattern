@@ -1,21 +1,4 @@
-``` c++
-//C++ Code
-bool batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    cout << "Temperature out of range!\n";
-    return false;
-  } else if(soc < 20 || soc > 80) {
-    cout << "State of Charge out of range!\n";
-    return false;
-  } else if(chargeRate > 0.8) {
-    cout << "Charge Rate out of range!\n";
-    return false;
-  }
-  return true;
-}
 
-
-```
 
 ``` C#
 
@@ -37,40 +20,40 @@ class Checker
     }
 
 ```
+This piece of code violates the SRP as it is handling 3 major responsibilities wherein it 
+checks whether the tempeature, state of charge, and charge rate is in range or not. Extraction, 
+as part of refactoring is a good way of distributing these multiple responsibilities and making the code more readable. The method has 3 arguments in its definition which is an early indicator towards the violation of SRP as there might be multiple logics to process and handle those parameters to derive a result. Method ideally should not have more than one argument. Also, 
+if the validation logic for these parameters is changed then the
+whole method has to be changed, it's not closed for modification.
 
-``` Java
-//Java
 
-public class Main {
-    static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
-        if(temperature < 0 || temperature > 45) {
-            System.out.println("Temperature is out of range!");
-            return false;
-        } else if(soc < 20 || soc > 80) {
-            System.out.println("State of Charge is out of range!");
-            return false;
-        } else if(chargeRate > 0.8) {
-            System.out.println("Charge Rate is out of range!");
-            return false;
-        }
-        return true;
-    }
-```
 
-``` Python
-//Python
-def battery_is_ok(temperature, soc, charge_rate):
-  if temperature < 0 or temperature > 45:
-    print('Temperature is out of range!')
-    return False
-  elif soc < 20 or soc > 80:
-    print('State of Charge is out of range!')
-    return False
-  elif charge_rate > 0.8:
-    print('Charge rate is out of range!')
-    return False
+bool isTemperatureInRange(float temperature){
+  if(temperature < 0 || temperature > 45) {
+    printOnConsole("Temperature out of range!");
+    return false;
+  } 
+  return true
+}
 
-  return True
+bool isSOCInRange(float soc){
+ if(soc < 20 || soc > 80) {
+   printOnConsole("Soc out of range!");
+    return false;
+  } 
+  return true
+}
+bool isChargeRateValid(float chargeRate){
+  if(chargeRate > 0.8) {
+    printOnConsole("Charge Rate out of range!\n");
+    return false;
+  }
+  return true
+}
 
-```
-
+bool isValid=false;
+  //delegation
+ bool isTemperatureValid=isTemperatureInRange(temperature);
+ bool isSocValid=isSOCInRange(soc);
+ bool isChargeValid=isChargeRateValid(chargeRate);
+ //compose and return result;
