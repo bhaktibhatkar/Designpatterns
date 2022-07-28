@@ -1,0 +1,65 @@
+Patterns Learning order
+
+Strategy Pattern
+Composite pattern
+Builder Pattern
+Observer Pattern
+Mediator Pattern
+Bridge Pattern
+State Pattern
+Decorator Pattern 
+   
+   Object-oriented programming (OOP) is a computer programming model that organizes software design around data, 
+   or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior.
+   
+Encapuslation :
+This principle states that all important information is contained inside an object and only 
+select information is exposed. The implementation and state of each object are privately held inside a defined class. Other objects do not have access to this class or the authority to make changes. They are only able to call a list of public functions or methods. This characteristic of data hiding provides greater program security and avoids unintended data corruption.
+
+Access modifier keywords are used for encapsulation in object oriented programming. 
+For example, encapsulation in java is achieved using private, protected and public keywords.
+
+Abstraction:
+Abstraction is the process of hiding the internal details of an application from the outer world. 
+Abstraction is used to describe things in simple terms. It’s used to create a boundary between the application and the client programs.
+
+Inheritance:
+Inheritance is the mechanism of creating new classes from existing ones.
+
+Polymorphism
+Polymorphism (from Greek, meaning “many forms”) is the ability of an object to take different forms and thus, depending upon the context, 
+to respond to the same message in different ways. Take the example of a chess game; a chess piece can take many forms, like bishop, castle, 
+or knight and all these pieces will respond differently to the ‘move’ message.
+
+
+UML Cheat sheet:
+As UML describes the real-time systems, it is very important to 
+make a conceptual model and then proceed gradually. The conceptual model of 
+UML can be mastered by learning the following three major elements −
+
+UML building blocks
+Rules to connect the building blocks
+Common mechanisms of UML
+
+Relationships:
+Association (Uses - relationship)
+Aggregation (Has-A Relationship)
+Composition (HAS- A relationship)
+Inheritance
+Multiplicity
+
+
+Pattern's learned :
+Stratergy
+Composite
+Observer
+Mediator
+Bridge
+State
+Decorator
+Wrapper - Chain of resposibilty, Adpater pattern, Command, separator, proxy,momento
+Builder
+Prototype
+Factory and abstract factory
+Family of objects - visitor pattern
+
