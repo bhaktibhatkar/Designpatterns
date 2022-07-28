@@ -1,0 +1,145 @@
+//Interface IDocument part 
+public interface IDocumentPart
+{
+    string Content { get; set; }
+    void Convert(IDocumentFormat format);
+}
+
+
+//Class Document Has all List of Header, footer,paragraphand link part
+public class Document
+{
+    public List<IDocumentPart> DocumentParts { get; set; }
+
+    public void AddDocParts(string header, string footer, string paragraph, string link)
+    {
+        DocumentParts = new List<IDocumentPart>
+        {
+            new HeaderPart() {Content = header},
+            new FooterPart() {Content = footer},
+            new ParagraphPart() {Content = paragraph},
+            new LinkPart() {Content = link}
+        };
+    }
+
+    public void Convert(IDocumentFormat documentFormat)
+    {
+        foreach (IDocumentPart docPart in DocumentParts)
+        {
+            docPart.Convert(documentFormat);
+        }
+    }
+}
+
+//Class Header Part  implemting IDocument part Interface
+public class HeaderPart : IDocumentPart
+{
+    public string Content { get; set; }
+
+    public void Convert(IDocumentFormat format)
+    {
+        format.ConvertHeader(this);
+    }
+}
+
+//Class Footer Part  implemting IDocument part Interface
+public class FooterPart : IDocumentPart
+{
+    public string Content { get; set; }
+
+    public void Convert(IDocumentFormat format)
+    {
+        format.ConvertFooter(this);
+    }
+}
+
+//Class Paragraph Part  implemting IDocument part Interface
+public class ParagraphPart : IDocumentPart
+{
+    public string Content { get; set; }
+
+    public void Convert(IDocumentFormat format)
+    {
+        format.ConvertParagraph(this);
+    }
+}
+
+//Class Link Part  implemting IDocument part Interface
+public class LinkPart : IDocumentPart
+{
+    public string Content { get; set; }
+
+    public void Convert(IDocumentFormat format)
+    {
+        format.ConvertLink(this);
+    }
+}
+
+
+//Interface for document format 
+public interface IDocumentFormat
+{
+    void ConvertHeader(IDocumentPart doc);
+    void ConvertFooter(IDocumentPart doc);
+    void ConvertParagraph(IDocumentPart doc);
+    void ConvertLink(IDocumentPart doc);
+}
+
+//Class HTML Part  implemting IDocument format part Interface
+public class HTMLFormat: IDocumentFormat
+{
+    public void ConvertHeader(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertFooter(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertParagraph(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertLink(IDocumentPart docPart)
+    {
+    }
+}
+
+//Class RTF Part  implemting IDocument format part Interface
+public class RTFFormat: IDocumentFormat
+{
+    public void ConvertHeader(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertFooter(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertParagraph(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertLink(IDocumentPart docPart)
+    {
+    }
+}
+//Class PDF Part  implemting IDocument format part Interface
+public class PDFFormat: IDocumentFormat
+{
+    public void ConvertHeader(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertFooter(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertParagraph(IDocumentPart docPart)
+    {
+    }
+
+    public void ConvertLink(IDocumentPart docPart)
+    {
+    }
+}
