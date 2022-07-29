@@ -77,15 +77,19 @@ When there is a need to attend, it needs to offer an initial diagnosis, to help 
 Design-it
 Assignment -4
 https://github.com/venu-shastri/design-patterns-summary/blob/main/DEBT_CODE.docx
-
-Assignment 5
-Let us build a sales reporting application for the management of a store with multiple departments. The features of the application include:
+  mediator pattern
+  
+  
+Assignment 5 - mediator pattern
+Let us build a sales reporting application for the management of a store with multiple departments. The features of the application include: - 
 
 Users should be able to select a specific department they are interested in.
 Upon selecting a department, two types of reports are to be displayed:
 Monthly report — A list of all transactions for the current month for the selected department.
 YTD sales chart — A chart showing the year-to-date sales for the selected department by month. Whenever a different department is selected, both reports should be refreshed with the data for the currently selected department
-Assignemnt 6
+
+
+Assignemnt 6 - proxy or decorator all we can do write proxy class
 Refactor Below Code and remove code pollution
 
 	public class ConcreteCalculator : ICalculator
@@ -101,7 +105,9 @@ Refactor Below Code and remove code pollution
         return addition;
     }
 }
-Assignment - 7
+
+
+Assignment - 7 - fly weight 
 Let us consider an online job site that receives XML data files from different employers with current openings in their organizations. When the number of vacancies is small, employers can enter details online. When the number of vacancies is large, employers upload details in the form of an XML file. Once the XML file is received, it needs to be parsed and processed. Let us assume the XML file to have the following details:
 
 a.Job title
