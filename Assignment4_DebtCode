@@ -1,0 +1,63 @@
+
+Debt Code changes - 
+
+Class Spinner
+{
+	float speed;
+	bool Clockwise;
+	bool expand
+	
+	void spin(){
+	}
+}
+
+class slider
+{
+	float glow;
+	bool vertical;
+	int distance;
+	
+	void slide(){
+	}
+}
+
+class hopper
+{
+	float energy;
+	bool visible;
+	int xcord, ycord;
+	
+	void hop(){
+	}
+
+}
+
+IComonIcon
+{
+	void spin();
+	void slide();
+	void hop();
+	int subtype
+}
+
+class Icon : IComonIcon
+{
+	public icon(unsigned value)
+	{
+		subtype=value;
+	}
+	
+	public void move()
+    {
+        if (subtype == 1) { spin(); }
+        else if (subtype == 2)
+        {
+            slide();
+        }
+        else
+        {
+            hop();
+        }
+    }
+
+}
