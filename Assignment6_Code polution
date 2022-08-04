@@ -1,0 +1,37 @@
+using System;
+
+public interface ICalculator {
+    int Add(int x, int y);
+}
+
+public class LogCalculator: ICalculator {
+    ICalculator _target;
+    public LogCalculator(ICalculator cal) {
+        this._target = cal;
+    }
+
+    public int Add(int x, int y) {
+        Console.WriteLine("Add(x={0},y={1})",x,y);
+        int add = _target.Add(x,y);
+        Console.WriteLine("result={0}", add);
+        return add;
+    }
+}
+
+public class MainCalculator : ICalculator
+{
+    public int Add(int x, int y)
+    {
+        var addition = x + y;
+        return addition;
+    }
+}
+
+public class Program
+{
+    public static void Main() {
+        ICalculator _cal = new MainCalculator();
+        _cal = new LogCalculator(_cal);
+        _cal.Add(20,30);
+    }
+}
